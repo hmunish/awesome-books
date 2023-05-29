@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main section starts here -->
+    <main>
+      <!-- Main container starts here -->
+      <section class="main-container">
+        <h1 class="title">Awesome books</h1>
+        <section class="books">
+          <ul class="books">
+            <li class="books">
+              Book Name <button class="delete">Delete</button>
+            </li>
+          </ul>
+        </section>
+        <section class="add-book">
+          <form class="add-book">
+            <input type="text" placeholder="Title" name="bookTitle" />
+            <input type="text" placeholder="Author" name="bookAuthor" />
+            <input type="submit" value="Add" />
+          </form>
+        </section>
+      </section>
+      <!-- Main container ends here -->
+    </main>
+    <!-- Main section ends here -->
+
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+  </body>
 </html>
