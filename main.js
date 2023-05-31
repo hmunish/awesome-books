@@ -18,7 +18,7 @@ class Books {
   displayBooks() {
     let liHtml = '';
     this.bookDetails.forEach((e) => {
-      liHtml += `<li class="books">${e.bookName} ${e.author}<button class="delete">Delete</button></li>`;
+      liHtml += `<li class="books">"${e.bookName}" by ${e.author}<button class="delete">Remove</button></li>`;
     });
     bookList.innerHTML = liHtml;
   }
@@ -30,7 +30,7 @@ class Books {
     book.author = author;
     this.bookDetails.push(book);
     localStorage.setItem('books', JSON.stringify(this.bookDetails));
-    const liHtml = `<li class="books">${bookName} ${author}<button class="delete">Delete</button></li>`;
+    const liHtml = `<li class="books">"${bookName}" by ${author}<button class="delete">Remove</button></li>`;
     bookList.insertAdjacentHTML('beforeend', liHtml);
   }
 
@@ -40,12 +40,10 @@ class Books {
     const parent = e.target.parentElement;
     if (target.classList.contains('delete')) {
       const bookName = parent.childNodes[0].textContent;
-
       // Removing book from the array
-      this.bookDetails = this.bookDetails.filter((e) => bookName !== `${e.bookName} ${e.author}`);
+      this.bookDetails = this.bookDetails.filter((e) => bookName !== `"${e.bookName}" by ${e.author}`);
       // Updating local storage
       localStorage.setItem('books', JSON.stringify(this.bookDetails));
-
       // Removing book li from the book ul
       parent.remove();
     }
