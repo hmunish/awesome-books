@@ -19,23 +19,23 @@
           <nav class="navbar">
             <p class="navbar">Awesome Books</p>
             <ul class="navbar">
-              <li class="navbar active">List</li>
-              <li class="navbar">Add new</li>
-              <li class="navbar">Contact</li>
+              <li class="navbar active" data-section="books">List</li>
+              <li class="navbar" data-section="add-book">Add new</li>
+              <li class="navbar" data-section="contact">Contact</li>
             </ul>
           </nav>
           <p class="time"></p>
         </section>
         <!-- Navbar ends here -->
-        <h1 class="title">All awesome books</h1>
         <section class="books">
+          <h1 class="title">All awesome books</h1>
           <ul class="books">
             <li class="books">
               Book Name <button class="delete">Delete</button>
             </li>
           </ul>
         </section>
-        <section class="add-book">
+        <section class="add-book dsp-none">
           <h1 class="title">Add a new book</h1>
           <form class="add-book">
             <input type="text" placeholder="Title" name="bookTitle" />
@@ -43,7 +43,7 @@
             <input type="submit" value="Add" />
           </form>
         </section>
-        <section class="contact">
+        <section class="contact dsp-none">
           <h1 class="title">Contact information</h1>
           <p class="contact">Do you have any questions or you just want to say "Hello"?<br>You can reach out to us!</p>
           <ul class="contact">

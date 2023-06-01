@@ -2,12 +2,23 @@ const bookList = document.querySelector('ul.books');
 const addForm = document.querySelector('form.add-book');
 const storageDetails = localStorage.getItem('books');
 const timeText = document.querySelector('.time');
-timeText.textContent = new Date().toLocaleString('default', {month: 'long', day:'2-digit', year:'numeric', hour:'numeric', minute:'numeric', second:'numeric'}).replace(',', '').replace(' at', ',');
+const navbar = document.querySelector('ul.navbar');
+const bookSection = document.querySelector('section.books');
+const addBookSection = document.querySelector('section.add-book');
+const contactSection = document.querySelector('section.contact');
+
 // Books class
 
 class Books {
   constructor(storedBooks) {
+    this.sections = [bookSection, addBookSection, contactSection];
     this.bookDetails = [];
+
+    // Displaying current time on page
+    timeText.textContent = new Date().toLocaleString('default', {
+      month: 'long', day: '2-digit', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric',
+    }).replace(',', '').replace(' at', ',');
+
     // Loading books if exists in local storage
     if (storedBooks !== null) {
       this.bookDetails = JSON.parse(storageDetails);
@@ -49,6 +60,24 @@ class Books {
       parent.remove();
     }
   }
+
+  // Toggling sections function
+
+  toggleSection(e) {
+    if (e.target.tagName === 'LI') {
+      const activeLink = document.querySelector('.navbar.active');
+      activeLink.classList.remove('active');
+      e.target.classList.add('active');
+
+      for (let i = 0; i < this.sections.length; i += 1) {
+        if (this.sections[i].classList.contains(e.target.getAttribute('data-section'))) {
+          this.sections[i].classList.remove('dsp-none');
+        } else {
+          this.sections[i].classList.add('dsp-none');
+        }
+      }
+    }
+  }
 }
 
 const newBook = new Books(storageDetails);
@@ -64,4 +93,9 @@ addForm.addEventListener('submit', (e) => {
 // Delete button click event
 bookList.addEventListener('click', (e) => {
   newBook.deleteBook(e);
+});
+
+// Menu click event
+navbar.addEventListener('click', (e) => {
+  newBook.toggleSection(e);
 });
