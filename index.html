@@ -14,15 +14,28 @@
     <main>
       <!-- Main container starts here -->
       <section class="main-container">
-        <h1 class="title">All awesome books</h1>
+        <!-- Navbar starts here -->
+        <section class="navbar">
+          <nav class="navbar">
+            <p class="navbar">Awesome Books</p>
+            <ul class="navbar">
+              <li class="navbar active" data-section="books">List</li>
+              <li class="navbar" data-section="add-book">Add new</li>
+              <li class="navbar" data-section="contact">Contact</li>
+            </ul>
+          </nav>
+          <p class="time"></p>
+        </section>
+        <!-- Navbar ends here -->
         <section class="books">
+          <h1 class="title">All awesome books</h1>
           <ul class="books">
             <li class="books">
               Book Name <button class="delete">Delete</button>
             </li>
           </ul>
         </section>
-        <section class="add-book">
+        <section class="add-book dsp-none">
           <h1 class="title">Add a new book</h1>
           <form class="add-book">
             <input type="text" placeholder="Title" name="bookTitle" />
@@ -30,6 +43,18 @@
             <input type="submit" value="Add" />
           </form>
         </section>
+        <section class="contact dsp-none">
+          <h1 class="title">Contact information</h1>
+          <p class="contact">Do you have any questions or you just want to say "Hello"?<br>You can reach out to us!</p>
+          <ul class="contact">
+            <li class="contact">Our email: mail@mail.com</li>
+            <li class="contact">Our phone number: 0043586534422</li>
+            <li class="contact">Our address: Streetname 22, 84503, City, Country</li>
+          </ul>
+        </section>
+        <footer>
+          <p>Copyright &nbsp;&nbsp;&nbsp; ...</p>
+        </footer>
       </section>
       <!-- Main container ends here -->
     </main>
