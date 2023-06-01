@@ -1,7 +1,8 @@
 const bookList = document.querySelector('ul.books');
 const addForm = document.querySelector('form.add-book');
 const storageDetails = localStorage.getItem('books');
-
+const timeText = document.querySelector('.time');
+timeText.textContent = new Date().toLocaleString('default', {month: 'long', day:'2-digit', year:'numeric', hour:'numeric', minute:'numeric', second:'numeric'}).replace(',', '').replace(' at', ',');
 // Books class
 
 class Books {
