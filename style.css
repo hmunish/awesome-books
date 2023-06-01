@@ -17,12 +17,12 @@
   gap: 25px 0;
 }
 
-section.navbar{
+section.navbar {
   width: 100%;
   margin-bottom: 5%;
 }
 
-nav.navbar{
+nav.navbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -31,22 +31,22 @@ nav.navbar{
   border-radius: 3px;
 }
 
-p.navbar{
+p.navbar {
   font-weight: 1000;
 }
 
-ul.navbar{
+ul.navbar {
   display: flex;
   list-style: none;
 }
 
-li.navbar{
+li.navbar {
   padding: 0 15px;
   font-weight: 1000;
   cursor: pointer;
 }
 
-.time{
+.time {
   float: right;
   font-size: 0.9rem;
   font-weight: 700;
@@ -95,6 +95,7 @@ section.add-book {
 
 h1.title {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 form.add-book {
@@ -120,7 +121,16 @@ input[type='submit'] {
   cursor: pointer;
 }
 
-footer{
+section.contact {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+  align-items: center;
+  font-weight: 1000;
+}
+
+footer {
   width: 100%;
   padding: 10px;
   border: 3px solid;
@@ -128,6 +138,10 @@ footer{
   margin-top: 15%;
 }
 
-footer p{
+footer p {
   font-weight: 1000;
+}
+
+section.dsp-none {
+  display: none;
 }
