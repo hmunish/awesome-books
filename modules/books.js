@@ -2,15 +2,15 @@ import {
   bookList, storageDetails, timeText, bookSection, addBookSection, contactSection,
 } from './dom-elements.js';
 
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
+
 export default class Books {
   constructor(storedBooks) {
     this.sections = [bookSection, addBookSection, contactSection];
     this.bookDetails = [];
 
     // Displaying current time on page
-    timeText.textContent = new Date().toLocaleString('default', {
-      month: 'long', day: '2-digit', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric',
-    }).replace(',', '').replace(' at', ',');
+    timeText.textContent = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
     // Loading books if exists in local storage
     if (storedBooks !== null) {
